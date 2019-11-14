@@ -25,5 +25,4 @@ class Patient
   def doctors
     appointments.collect(&:doctor)
   end
-
 end
