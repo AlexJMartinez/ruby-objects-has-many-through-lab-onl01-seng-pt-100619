@@ -1,4 +1,3 @@
-require 'pry'
 class Doctor
   attr_accessor :name
 
@@ -15,6 +14,7 @@ class Doctor
 
   def appointments
     Appointment.all.select {|appointment| appointment.doctor == self}
+    binding.pry
   end
 
   def new_appointment(date, patient)
@@ -23,7 +23,6 @@ class Doctor
 
   def patients
     appointments.collect(&:patient)
-    #binding.pry
   end
 
 end
